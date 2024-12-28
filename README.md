@@ -1,4 +1,4 @@
-# Asteroid Fighter Game
+# Asteroid Fighter Game[https://aalu-love.github.io/fp-game]
 
 A classic-style space shooter game where you control a fighter ship and defend against incoming asteroids.
 

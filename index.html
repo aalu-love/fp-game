@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Asteroid Game</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <link rel="stylesheet" href="styles/style.css" />
+    </head>
+    <body>
+        <div class="game-container">
+            <div class="sidebar left-panel">
+                <div class="game-info">
+                    <h2>Controls</h2>
+                    <ul>
+                        <li>🖱️ Mouse Movement: Aim ship</li>
+                        <li>🖱️ Click: Shoot</li>
+                        <li>Hold Click: Rapid fire</li>
+                    </ul>
+                    <h2>Scoring</h2>
+                    <ul>
+                        <li>Large Asteroid: 10 points</li>
+                        <li>Medium Asteroid: 20 points</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <h1>Asteroid Fighter</h1>
+                <!-- Game canvas will be inserted here by p5.js -->
+                <div id="instructionsOverlay" class="instructions-overlay">
+                    <div class="instructions-content">
+                        <h2>Ready to Play?</h2>
+                        <button class="start-button" onclick="startGame()">
+                            Start Game
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar right-panel">
+                <div class="game-stats">
+                    <h2>Current Game</h2>
+                    <div class="stat-box">
+                        <div class="stat-label">Score:</div>
+                        <div class="stat-value" id="currentScore">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">High Score:</div>
+                        <div class="stat-value" id="highScore">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Health:</div>
+                        <div class="stat-value" id="health">100</div>
+                    </div>
+                </div>
+                <div class="damage-info">
+                    <h2>Damage Info</h2>
+                    <ul>
+                        <li>Large Asteroid: -40 HP</li>
+                        <li>Medium Asteroid: -20 HP</li>
+                    </ul>
+                </div>
+                <div class="weapon-info">
+                    <h2>Weapon Level: <span id="weaponLevel">1</span></h2>
+                    <div class="weapon-levels">
+                        <div class="weapon-level active" id="level1">
+                            Normal Shot
+                            <div class="weapon-stats">
+                                <span>Fire Rate: Normal</span>
+                                <span>Recoil: High</span>
+                            </div>
+                        </div>
+                        <div class="weapon-level locked" id="level2">
+                            Rapid Fire (100 pts)
+                            <div class="weapon-stats">
+                                <span>Fire Rate: Very Fast</span>
+                                <span>Recoil: Low</span>
+                            </div>
+                        </div>
+                        <div class="weapon-level locked" id="level3">
+                            Dual Shot (300 pts)
+                            <div class="weapon-stats">
+                                <span>Fire Rate: Normal</span>
+                                <span>Recoil: Medium</span>
+                            </div>
+                        </div>
+                        <div class="weapon-level locked" id="level4">
+                            Laser (600 pts)
+                            <div class="weapon-stats">
+                                <span>Fire Rate: Extreme</span>
+                                <span>Recoil: Minimal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="upgrade-button locked"
+                        onclick="upgradeWeapon()"
+                    >
+                        Upgrade Weapon (100 points)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/Fighter.js"></script>
+        <script src="scripts/Projectile.js"></script>
+        <script src="scripts/Asteroid.js"></script>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

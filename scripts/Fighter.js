@@ -33,7 +33,7 @@ class Fighter {
         this.height = 40;
 
         // Weapon properties
-        this.weaponLevel = 3;
+        this.weaponLevel = 1;
         this.fireRate = this.fireRates[1];
         this.recoilAmount = this.recoilAmounts[1];
         this.lastFireTime = 0;
